@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import mockData from './mockData';
+import { toFirstCharUppercase } from './constant';
 
 const useStyles = makeStyles({
   pokedexContainer: {
@@ -44,7 +45,7 @@ const Pokedex = (props) => {
             style={{ width: '130px', height: '130px' }}
           />
           <CardContent className={classes.cardContent}>
-            <Typography>{`${id}. ${name}`}</Typography>
+            <Typography>{`${id}. ${toFirstCharUppercase(name)}`}</Typography>
           </CardContent>
         </Card>
       </Grid>
