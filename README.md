@@ -1,3 +1,3 @@
-### `yarn build` fails to minify
+### Pokemon Cards
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Pokemon Cards with React, Material UI, Axios 
