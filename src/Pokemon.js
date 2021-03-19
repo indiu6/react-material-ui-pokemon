@@ -11,6 +11,7 @@ const Pokemon = (props) => {
     },
     history,
   } = props;
+
   const [pokemon, setPokemon] = useState(undefined);
 
   useEffect(() => {

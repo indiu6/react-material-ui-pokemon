@@ -1,0 +1,12 @@
+version: '3'
+services: # 컨테이너들을 정의
+  pokemon: # this name can be anything
+    build:
+      dockerfile: Dockerfile # dockerfile name
+      context: ./ # dockerfile path
+    volumes: # volumes configuration for live code-editing
+      - /app/node_modules #도커 /app/node_modules는 맵핑을 따로 안해주겠다.
+      - ./:/app # 로컬에 있는 모든 파일을 맵핑
+    ports:
+      - '3001:3001' # port 맵핑
+    stdin_open: true # this option is needed for start, close React app
