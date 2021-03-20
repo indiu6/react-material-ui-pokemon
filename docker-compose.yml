@@ -6,7 +6,7 @@ services: # define containers
       context: ./ # dockerfile path
     volumes: # volumes configuration for live code-editing
       - /app/node_modules # docker /app/node_modules (not needed to map)
-      - ./:/app # 로컬에 있는 모든 파일을 맵핑
+      - ./:/app # mapping all files in local
     ports:
       - '3001:3001' # port MAPPING
     stdin_open: true # this option is needed for start, close React app
