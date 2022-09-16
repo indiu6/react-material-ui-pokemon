@@ -5,4 +5,4 @@ Pokemon Cards with Docker, AWS EC2, Nginx, React, Material-UI, MobaXterm
 ## Summary
 
 - Design: [@material-ui](https://material-ui.com/)
-- Deployment: AWS EC2 + Docker
+- Deployment: AWS EC2 + Docker -> now on Versel
