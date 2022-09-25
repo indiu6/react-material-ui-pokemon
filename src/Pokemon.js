@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 // import mockData from './mockData';
-import { Typography, Link, CircularProgress, Button } from '@material-ui/core';
-import { toFirstCharUppercase } from './constant';
-import axios from 'axios';
+import { Typography, Link, CircularProgress, Button } from '@material-ui/core'
+import { toFirstCharUppercase } from './constant'
+import axios from 'axios'
 
 const Pokemon = (props) => {
   const {
@@ -10,26 +10,27 @@ const Pokemon = (props) => {
       params: { pokemonId },
     },
     history,
-  } = props;
+  } = props
 
-  const [pokemon, setPokemon] = useState(undefined);
+  const [pokemon, setPokemon] = useState(undefined)
 
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
       .then((response) => {
-        const { data } = response;
-        setPokemon(data);
+        const { data } = response
+        setPokemon(data)
       })
       .catch((error) => {
-        setPokemon(false);
-      });
-  }, [pokemonId]);
+        console.log('error', error)
+        setPokemon(false)
+      })
+  }, [pokemonId])
 
   const generatePokemonJSX = () => {
-    const { name, id, species, height, weight, types, sprites } = pokemon;
-    const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-    const { front_default } = sprites;
+    const { name, id, species, height, weight, types, sprites } = pokemon
+    const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
+    const { front_default } = sprites
     return (
       <>
         <Typography variant="h1">
@@ -50,13 +51,13 @@ const Pokemon = (props) => {
         <Typography>Weight: {weight} </Typography>
         <Typography variant="h6"> Types:</Typography>
         {types.map((typeInfo) => {
-          const { type } = typeInfo;
-          const { name } = type;
-          return <Typography key={name}> {`${name}`}</Typography>;
+          const { type } = typeInfo
+          const { name } = type
+          return <Typography key={name}> {`${name}`}</Typography>
         })}
       </>
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -69,7 +70,7 @@ const Pokemon = (props) => {
         </Button>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Pokemon;
+export default Pokemon
